@@ -1,55 +1,69 @@
-/* Global styles */
-html {
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
   
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
   
-  /* According to youtube, we put multiple fonts in case the browser doesn't support our first choice */
   body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+         
+    
   }
   
-  /* Header styles */
+  
   header {
     background-color: black;
     color: white;
-    padding: 1rem;
+    padding: 1em;
   }
   
-  h1 {
-    margin: 0;
+  header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
   }
-  
-  /* Main styles */
+
   main {
-    margin: 1rem;
+    margin: 1em;
   }
+  
   
   h2 {
-    font-size: 1.5rem;
-    margin: 1rem 0;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    /* background: linear-gradient(to right, cyan, rgb(100, 54, 54));
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
   }
   
   p {
-    line-height: 1.5;
-    margin: 1rem 0;
+    margin-bottom: 1em;
+    
+    
+    
   }
   
-  /* Footer styles */
   footer {
     background-color: black;
     color: white;
-    padding: 1rem;
+    padding: 1em;
     text-align: center;
   }
-  
-  footer p {
-    margin: 0;
+
+  section {
+    margin-bottom: 2em;
+    border: 2px solid black;
+    padding: 1em;
+    background: linear-gradient(to right, blue, green, cyan, yellow,  rgb(100, 54, 54));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
+  
+
+  
   
