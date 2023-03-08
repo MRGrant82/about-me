@@ -55,5 +55,14 @@ if (answer5 === correctAnswer5 || answer5 === 'y') {
 }
 console.log('Question 5 answer: ' + answer5);
 
+let responseSection = document.querySelector('section:nth-of-type(5) p'); 
+responseSection.innerHTML = 'Question 1 answer: ' + answer1 + '<br>' +
+                            'Question 2 answer: ' + answer2 + '<br>' +
+                            'Question 3 answer: ' + answer3 + '<br>' +
+                            'Question 4 answer: ' + answer4 + '<br>' +
+                            'Question 5 answer: ' + answer5 + '<br>' +
+                            'Thank you again for visiting today ' + userName + ' !';
+
+
 // Final thank you
 alert(userName + ', I appreciate you visiting my site.  It is definitely a work in progress.  Take care!')
