@@ -85,7 +85,7 @@ let multipleChoiceQuestion = 'Which of the Anime listed below are my absolute fa
 
 let multipleChoiceAnswers = [['overlord', 'that time i got reincarnated as a slime'], ['sword art online', 're:zero - starting life in another world']];
 let response = null;
-let answer7 = 'no'; // Set answer7 to 'no' by default
+let answer7 = 'no'; // Set answer7 to no because there was some truthy and falsey issues
 
 for (let i = 0; i < multipleChoiceAnswers.length; i++) {
   let question = multipleChoiceQuestion + '\n\nAttempt ' + (i + 1) + ':';
