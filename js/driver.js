@@ -4,7 +4,7 @@
 
 let userName = prompt('What is your name?');
 alert('Hello ' + userName + '! Please answer a few questions for me.')
-console.log(userName + 'is the user name');
+// console.log(userName + 'is the user name');
 
 let answer1;
 let answer2;
@@ -22,7 +22,7 @@ if (answer1 === correctAnswer1 || answer1 === 'y') {
 } else {
     alert("That's ok, " + userName + ", fish is not for everyone. That said, I do like fish."); // My hope is that this is enough for the requirement to include the correct answer.
 }
-console.log('Question 1 answer: ' + answer1);
+// console.log('Question 1 answer: ' + answer1);
 }
 //calling question one
 questionOne();
@@ -35,7 +35,7 @@ if (answer2 === correctAnswer2 || answer2 === 'y') {
 } else {
     alert("That's interesting " + userName + " , I would like to know more about where you are from then. I am from the United States of America."); // My hope is that this is enough for the requirement to include the correct answer.
 }
-console.log('Question 2 answer: ' + answer2);
+// console.log('Question 2 answer: ' + answer2);
 }
 // call function 
 questionTwo();
@@ -49,7 +49,7 @@ if (answer3 === correctAnswer3 || answer3 === 'y') {
 } else {
     alert(userName + ", I would definitely recommend visiting at least once. Personally, I lived in Japan for several years."); // My hope is that this is enough for the requirement to include the correct answer.
 }
-console.log('Question 3 answer: ' + answer3);
+// console.log('Question 3 answer: ' + answer3);
 }
 // Question 4
 
@@ -61,7 +61,7 @@ if (answer4 === correctAnswer4 || answer4 === 'y') {
 } else {
     alert('Motorcycles are definitely not for everyone, ' + userName + '. I did ride for several years.'); // My hope is that this is enough for the requirement to include the correct answer.
 }
-console.log('Question 4 answer: ' + answer4);
+// console.log('Question 4 answer: ' + answer4);
 }
 // calling question four
 questionFour();
@@ -76,7 +76,7 @@ if (answer5 === correctAnswer5 || answer5 === 'y') {
 } else {
     alert(userName + " may I recommend Hitchhiker's Guide to the Galaxy? There you will find why the answer is always 42."); // My hope is that this is enough for the requirement to include the correct answer.
 }
-console.log('Question 5 answer: ' + answer5);
+// console.log('Question 5 answer: ' + answer5);
 }
 //call question 5
 questionFive();
@@ -112,19 +112,15 @@ let answer6 = guessedCorrectly ? 'yes' : 'no'; // Set answer6 to 'yes' or 'no' b
 questionSix();
 
 // Question 7
-function questionSeven(){
-let multipleChoiceQuestion = 'Which of the Anime listed below are my absolute favorites?  There are two answers from the following: \nOverlord, That Time I got Reincarnated as a Slime, Sword Art Online, Death March to the Parallel World Rhapsody, Re:Zero - Starting Life in Another World. ';
-
-let multipleChoiceAnswers = [['overlord', 'that time i got reincarnated as a slime'], ['sword art online', 're:zero - starting life in another world']];
-response = null;
-let answer7 = 'no'; // Set answer7 to no because there was some truthy and falsey issues
-
-for (let i = 0; i < multipleChoiceAnswers.length; i++) {
-  let question = multipleChoiceQuestion + '\n\nAttempt ' + (i + 1) + ':';
-  let correctAnswers = multipleChoiceAnswers[0];
+function questionSeven() {
+  let multipleChoiceQuestion = 'Which of the Anime listed below are my absolute favorites?  There are two answers from the following: \nOverlord, That Time I got Reincarnated as a Slime, Sword Art Online, Death March to the Parallel World Rhapsody, Re:Zero - Starting Life in Another World. ';
+  let correctAnswers = ['overlord', 'that time i got reincarnated as a slime', 'sword art online', 're:zero - starting life in another world'];
+  let response = null;
+  let answer7 = 'no';
   let attempts = 6;
-  let guessedCorrectly = false;  
+
   while (attempts > 0) {
+    let question = multipleChoiceQuestion + '\n\nAttempt ' + (7 - attempts) + ':';
     response = prompt(question).toLowerCase();
 
     if (correctAnswers.includes(response)) {
@@ -132,7 +128,11 @@ for (let i = 0; i < multipleChoiceAnswers.length; i++) {
       let index = correctAnswers.indexOf(response);
       correctAnswers.splice(index, 1);
 
-      guessedCorrectly = true;
+      answer7 = 'yes';
+
+      if (correctAnswers.length === 1) {
+        alert('The other possible correct answer was: ' + correctAnswers[0]);
+      }
 
       break;
     } else {
@@ -144,21 +144,13 @@ for (let i = 0; i < multipleChoiceAnswers.length; i++) {
     }
   }
 
-  if (guessedCorrectly) {
-    alert('The other possible correct answer was: ' + correctAnswers[0]);
-    break;
-  } else {
-    if (attempts < 1) {
-      alert('I\'m sorry, you did not guess any of my remaining favorite Anime correctly. The correct answers were: ' + correctAnswers.join(', '));
-    }
+  if (attempts < 1) {
+    alert('I\'m sorry, you did not guess any of my favorite Anime correctly. The correct answers were: ' + correctAnswers.join(', '));
   }
 }
-
-if (guessedCorrectly) {
-  answer7 = 'yes'; // Set answer7 to 'yes' if the user guessed one of the correct answers
-}
-}
 questionSeven();
+
+
 
 function displayResults(){
 let responseSection = document.querySelector('section:nth-of-type(5) p'); 
