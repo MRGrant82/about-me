@@ -21,3 +21,4 @@ These are good practices.
 
 [Screenshot](/img/Capture.PNG)
 [lab03](/img/lab03.PNG)
+[aboutMe](/img/lightHouseAboutMe.png)
