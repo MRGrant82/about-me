@@ -152,19 +152,26 @@ questionSeven();
 
 
 
-function displayResults(){
-let responseSection = document.querySelector('section:nth-of-type(5) p'); 
-responseSection.innerHTML = 'Question 1 answer: ' + answer1 + '<br>' +
-                            'Question 2 answer: ' + answer2 + '<br>' +
-                            'Question 3 answer: ' + answer3 + '<br>' +
-                            'Question 4 answer: ' + answer4 + '<br>' +
-                            'Question 5 answer: ' + answer5 + '<br>' +
-                            'Question 6 answer: ' + guessedCorrectly + '<br>' +
-                            'Question 7 answer: ' + response + '<br>' +
-                            'Thank you again for visiting today ' + userName + ' !';
-// Final thank you
+function displayResults() {
+  let responseSection = document.querySelector('section:nth-of-type(5) p');
+  let results = 'Question 1 answer: ' + answer1 + '\n' +
+                'Question 2 answer: ' + answer2 + '\n' +
+                'Question 3 answer: ' + answer3 + '\n' +
+                'Question 4 answer: ' + answer4 + '\n' +
+                'Question 5 answer: ' + answer5 + '\n' +
+                'Question 6 answer: ' + guessedCorrectly + '\n' +
+                'Question 7 answer: ' + response + '\n' +
+                'Thank you again for visiting today ' + userName + ' !';
 
-alert(userName + ', I appreciate you visiting my site. It is definitely a work in progress. Take care!');
+  // Display the results in an alert prompt
+  alert(results);
+
+  // Display the results in the HTML document
+  responseSection.innerHTML = results;
+  
+  // Final thank you
+  alert(userName + ', I appreciate you visiting my site. It is definitely a work in progress. Take care!');
 }
+
 
 displayResults();
